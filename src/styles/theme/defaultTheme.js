@@ -18,6 +18,8 @@ const colors = {
   textColorTertiary: '#B7B7B7',
   textColorDisabled: '#E2E2E2',
 
+  backgroundColorLight: '#F5F5F5',
+
   gray300: '#B7B7B7',
   gray400: '#E2E2E2',
 };
