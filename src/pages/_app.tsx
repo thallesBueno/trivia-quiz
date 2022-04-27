@@ -1,7 +1,12 @@
 import type { AppProps } from "next/app";
+import { ResultContextProvider } from "../hooks/ResultContext";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <ResultContextProvider>
+      <Component {...pageProps} />
+    </ResultContextProvider>
+  );
 }
 
 export default MyApp;
