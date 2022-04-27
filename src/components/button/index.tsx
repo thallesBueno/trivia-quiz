@@ -28,12 +28,11 @@ const StyledButton = styled.button`
 
 interface props {
   children: ReactNode,
+  onClick: () => {};
 }
 
-const Button: React.FC<props> = ({ children }) => {
-  return (
-    <StyledButton>{children}</StyledButton>
-  );
-};
+const Button: React.FC<props> = ({ children, onClick }) =>  (
+  <StyledButton onClick={onClick}>{children}</StyledButton>
+);
 
 export default Button;
