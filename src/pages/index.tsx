@@ -1,16 +1,20 @@
-import Link from 'next/link';
 import type { NextPage } from "next";
+import { useRouter } from 'next/router';
+
+import Button from '../components/button';
+import { Container } from '../styles/pages/homepage';
 
 const Home: NextPage = () => {
+  const router = useRouter();
+
+  const goToQuiz = () => router.push("/quiz");
   return (
-    <div>
+    <Container>
       <h1>Welcome to the Trivia Challange!</h1>
       <p>You will be presented with 10 True or False questions.</p>
-      <p>Can you score 100%?</p>
-      <Link href="/quiz">
-        <a>Begin quiz</a>
-      </Link>
-    </div>
+      <h2>Can you score 100%?</h2>
+      <Button onClick={goToQuiz}>Start</Button>
+    </Container>
   );
 };
 
