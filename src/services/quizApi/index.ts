@@ -20,6 +20,7 @@ class QuizApi {
         type: QuestionType.boolean,
       }
     });
+
     const responseData = axiosResponse.data;
 
     return responseData.results;
