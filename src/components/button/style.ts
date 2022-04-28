@@ -1,7 +1,11 @@
 import styled from "styled-components";
 import { ButtonVariant } from ".";
 
-const StyledButton = styled.button`
+interface props {
+  variant: ButtonVariant
+}
+
+const StyledButton = styled.button<props>`
 height: 48px ;
 padding: 8px 20px;
 
