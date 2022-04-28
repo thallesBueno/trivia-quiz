@@ -10,8 +10,8 @@ const Home: NextPage = () => {
   const goToQuiz = () => router.push("/quiz");
   return (
     <Container>
-      <h1>Welcome to the Trivia Challange!</h1>
-      <p>You will be presented with 10 True or False questions.</p>
+      <h3>Welcome to the</h3>
+      <h1>Trivia Challange!</h1>
       <h2>Can you score 100%?</h2>
       <Button onClick={goToQuiz}>Start</Button>
     </Container>

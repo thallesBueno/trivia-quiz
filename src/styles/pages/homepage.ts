@@ -9,6 +9,8 @@ const Container = styled.div`
   justify-content: center;
   align-items: center ;
 
+  text-align: center;
+
   h1 {
     margin-bottom: 24px;
     color: ${({ theme }) => theme.colors.mainColor};
@@ -20,7 +22,6 @@ const Container = styled.div`
 
   h2 {
     margin-bottom: 24px;
-    color: ${({ theme }) => theme.colors.mainColorDarker};
   }
 `;
 
