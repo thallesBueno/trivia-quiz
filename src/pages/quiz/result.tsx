@@ -1,10 +1,14 @@
-import { useRef } from "react";
 import type { NextPage } from "next";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 import { useResultContext } from "../../hooks/ResultContext";
-import { useRouter } from "next/router";
 import Result from "../../entities/Result";
+
+import QuestionCard from "../../components/questionCard";
+import Button from "../../components/button";
+
+import { Container, QuestionsContainer } from "../../styles/pages/quizResult";
 
 const QuizPage: NextPage = () => {
   const router = useRouter();
@@ -13,25 +17,29 @@ const QuizPage: NextPage = () => {
   const { questions, answers } = result;
 
   if (!questions || !answers) {
-    return <></>
+    return (
+      <Link href="/">
+        <a>Back to home</a>
+      </Link>
+    );
   }
 
-  const isTheAnswersCorrect = answers
-  .map((answer, index) => (answer ? 'True' : 'False') === questions[index].correct_answer);
-  const correctAnswersLength = isTheAnswersCorrect.filter(answer => answer).length;
+  const goToHomepage = () => router.push('/');
+
+  const questionsCorrected = answers
+    .map((answer, index) => (answer ? 'True' : 'False') === questions[index].correct_answer);
+  const correctAnswersLength = questionsCorrected.filter(answer => answer).length;
 
   return (
-    <div>
-      <p>{correctAnswersLength}/{answers.length}</p>
-      {questions.map((question, index) => (
-        <div key={question.question}>
-          <p>{question.category}: {question.question} - {answers[index] ? 'True' : 'False'}</p>
-        </div>
-      ))}
-      <Link href="/quiz">
-        <a>Play again</a>
-      </Link>
-    </div>
+    <Container>
+      <h4>Score {correctAnswersLength}/{answers.length}</h4>
+      <QuestionsContainer>
+        {questions.map((question) => (
+          <QuestionCard key={question.question} question={question} small/>
+        ))}
+      </QuestionsContainer>
+      <Button onClick={goToHomepage}>Play again</Button>
+    </Container>
   );
 };
 
