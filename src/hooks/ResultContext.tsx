@@ -21,7 +21,7 @@ const ResultContextProvider : React.FC<props>= ({ children }) => {
 const useResultContext = () => {
   const resultState = useContext(ResultContext);
 
-  return resultState;
+  return resultState || [{} as Result, () => {}];
 }
 
 export { ResultContextProvider, useResultContext };
