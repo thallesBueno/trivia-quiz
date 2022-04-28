@@ -5,23 +5,16 @@ const colors = {
   mainColorDarker: '#DB6900',
   mainColorLighter: '#FFA142',
 
-  mainColorContrast: '#45547F',
-  mainColorContrastDarker: '#2A334D',
-  mainColorContrastLighter: '#B2C6FF',
+  red: '#CF3200',
+  darkRed: '#bf3304',
 
-  statusColorError: '#CF3200',
-  statusColorWarning: '#F3AF00',
-  statusColorSuccess: '#2BD971',
+  green: '#2BD971',
+  darkGreen: '#00ad3d',
 
   textColorPrimary: '#3C3C3B',
-  textColorSecondary: '#787878',
-  textColorTertiary: '#B7B7B7',
-  textColorDisabled: '#E2E2E2',
 
-  backgroundColorLight: '#F5F5F5',
-
-  gray300: '#B7B7B7',
-  gray400: '#E2E2E2',
+  backgroundColorLight: '#E8EDF2',
+  white: '#fff',
 };
 
 const titleHeadline = css`
