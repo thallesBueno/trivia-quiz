@@ -12,6 +12,10 @@ const colors = {
   darkGreen: '#00ad3d',
 
   textColorPrimary: '#3C3C3B',
+  textColorSecondary: '#787878',
+
+  gray300: '#B7B7B7',
+  gray400: '#E2E2E2',
 
   backgroundColorLight: '#E8EDF2',
   white: '#fff',
