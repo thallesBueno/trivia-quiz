@@ -6,6 +6,11 @@ import Question from "../../entities/Question";
 import QuizApi from "../../services/quizApi";
 import { useResultContext } from "../../hooks/ResultContext";
 
+import Button, { ButtonVariant } from "../../components/button";
+import QuestionCard from "../../components/questionCard";
+
+import { ButtonsContainer, Container } from "../../styles/pages/quiz";
+
 const FIRST_QUESTION_INDEX = 0;
 
 const QuizPage: NextPage = () => {
@@ -68,12 +73,14 @@ const QuizPage: NextPage = () => {
   const actualQuestion = questions[actualQuestionIndex];
 
   return (
-    <div>
-      <h2>{actualQuestion.category}</h2>
-      <div>{actualQuestion.question}</div>
-      <button onClick={answerFalse}>False</button>
-      <button onClick={answerTrue}>True</button>
-    </div>
+    <Container>
+      <h4>Question {actualQuestionIndex + 1}/{questions.length}</h4>
+      <QuestionCard question={actualQuestion}/>
+      <ButtonsContainer>
+        <Button onClick={answerFalse} variant={ButtonVariant.error}>False</Button>
+        <Button onClick={answerTrue} variant={ButtonVariant.success}>True</Button>
+      </ButtonsContainer>
+    </Container>
   );
 };
 
