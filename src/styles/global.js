@@ -7,6 +7,7 @@ export default createGlobalStyle`
     padding: 0px;
     box-sizing: border-box;
     outline: none;
+    color: ${({ theme }) => theme.colors.textColorPrimary};
   }
 
   a {
